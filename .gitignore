@@ -3,3 +3,5 @@ _pycache
 __pycache__
 *.pyc
 /data_ingestion/samples
+data_preparation/cluster
+data_preparation/hsi
