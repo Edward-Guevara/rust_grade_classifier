@@ -1,25 +1,20 @@
 from spectral import envi, save_rgb, imshow
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
 import glob
-import pandas as pd
-import os
-
+import functions as fun
 
 """
-Introduce the folder name and sample name of hsi to calibrate
+Introduce the folder name, sample name of hsi to calibrate and a root folder
 """
 
 folder = "testing"
 sample = "15L_20R_day"
 
-"""
-changes the directory of hdr and bin file on your local location
-"""
+root_folder =  "C:/Users/Edward/OneDrive - Universidad Tecnológica de Panamá/Projects"
 
-hdr = glob.glob('C:/Users/Edward/OneDrive - Universidad Tecnológica de Panamá/Projects/rust_grade_classifier/data_ingestion/samples/{}/{}/*.hdr'.format(folder, sample))                                                     
-Bin = glob.glob('C:/Users/Edward/OneDrive - Universidad Tecnológica de Panamá/Projects/rust_grade_classifier/data_ingestion/samples/{}/{}/*.bin'.format(folder, sample))  
+hdr = glob.glob(root_folder + '/rust_grade_classifier/data_ingestion/samples/{}/{}/*.hdr'.format(folder, sample))                                                     
+Bin = glob.glob(root_folder + '/rust_grade_classifier/data_ingestion/samples/{}/{}/*.bin'.format(folder, sample))  
 
 open_data = envi.open(hdr[0], Bin[0])
 data = np.array(open_data.load())
@@ -111,14 +106,9 @@ imshow(hsi, (49, 71, 89))
 Script to save calibrated hsi and image rbg
 """
 
-folder_name = 'C:/Users/Edward/OneDrive - Universidad Tecnológica de Panamá/Projects/rust_grade_classifier/data_preparation/hsi/{}'.format(folder)
+folder_name = 'hsi/{}'.format(folder)
 
-
-try:
-    os.makedirs(folder_name)
-except FileExistsError:
-    print(f"The folder {folder_name} already exists.")
-
+fun.make_folder(folder_name)
 
 save_rgb(folder_name + "/hsi_{}".format(sample) + ".jpg", hsi, [49, 71, 89])
 np.savez_compressed(folder_name + "/hsi_{}".format(sample), hsi)
