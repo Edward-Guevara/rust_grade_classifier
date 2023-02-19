@@ -6,3 +6,4 @@ __pycache__
 /data_preparation/cluster
 /data_preparation/hsi
 /data_preparation/__pycache__
+/data_preparation/dataset

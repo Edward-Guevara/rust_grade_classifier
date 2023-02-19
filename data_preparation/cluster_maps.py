@@ -9,7 +9,8 @@ import functions as fun
 """
 introduce the folder name , training or testing, and numbers of cluster
 """
-folder = "training"
+
+folder = 'testing'
 ncluster = 6
 
 hsi_path = glob.glob("hsi/{}/*.npz".format(folder))
