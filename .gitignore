@@ -7,3 +7,4 @@ __pycache__
 /data_preparation/hsi
 /data_preparation/__pycache__
 /data_preparation/dataset
+/data_preparation/gt
