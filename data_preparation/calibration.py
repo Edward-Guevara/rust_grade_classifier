@@ -11,7 +11,7 @@ Introduce the folder name, sample name of hsi to calibrate and a root folder
 folder = "testing"
 sample = "15L_20R_day"
 
-root_folder =  "C:/Users/Edward/OneDrive - Universidad Tecnológica de Panamá/Projects"
+root_folder =  "C:/Users/Edward/OneDrive/OneDrive - Universidad Tecnológica de Panamá/Projects"
 
 hdr = glob.glob(root_folder + '/rust_grade_classifier/data_ingestion/samples/{}/{}/*.hdr'.format(folder, sample))                                                     
 Bin = glob.glob(root_folder + '/rust_grade_classifier/data_ingestion/samples/{}/{}/*.bin'.format(folder, sample))  
