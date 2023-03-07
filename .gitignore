@@ -8,3 +8,9 @@ __pycache__
 /data_preparation/__pycache__
 /data_preparation/dataset
 /data_preparation/gt
+/data_exploration/__pycache__
+/data_exploration/0001_ninety_percentage
+/data_exploration/0002_eighty_percentage
+/data_exploration/0003_seventy_percentage
+/data_exploration/0004_sixty_percentage
+/data_exploration/0005_fivety_percentage

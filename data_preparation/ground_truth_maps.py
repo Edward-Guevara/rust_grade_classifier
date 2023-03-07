@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 import functions as fun
 
-folder = 'testing'
+folder = 'training'
 
 root_folder = "C:/Users/Edward/OneDrive - Universidad Tecnológica de Panamá/Projects"
 

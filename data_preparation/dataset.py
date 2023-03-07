@@ -12,6 +12,7 @@ gt_file_path = glob.glob('gt/{}/*.npz'.format(folder))
 
 
 target = [1, 2, 3, 4]
+names = ['Severa', 'Moderada', 'Ligera', 'Saludable']
 
 """
 HSI and grundtruth dataset
@@ -23,10 +24,10 @@ gt = [np.load(i)['arr_0'] for i in gt_file_path]
 
 """dataset
 """
-dataset = [f.dataset(target, gt, hsi) for gt, hsi in zip(gt, hsi)]
+dataset = [f.dataset(names, target, gt, hsi) for gt, hsi in zip(gt, hsi)]
 data = np.vstack(tuple([data[0] for data in dataset])) 
 target = np.hstack(tuple([data[1] for data in dataset])) 
-
+name = np.hstack(tuple([data[2] for data in dataset]))
 """
 dataframe
 """
@@ -34,7 +35,7 @@ dataframe
 col = ["B{}".format(i+1) for i in range(hsi[0].shape[2])]
 df = pd.DataFrame(data, columns = col)
 df['target'] = target
-
+df['name'] = name
 
 
 to_save = 'dataset'
